@@ -1,8 +1,25 @@
-"use client"; 
+"use client";
 
 import Head from "next/head";
 
 export default function Home() {
+  const focusAreas = [
+    { title: "Workforce Participants", description: "Short description about this area." },
+    { title: "Workforce Enablers", description: "Short description about this area." },
+    { title: "Service Providers", description: "Short description about this area." }
+  ];
+
+  const industries = [
+    { title: "Care Economy", description: "Focus on health and social care jobs." },
+    { title: "Gig Economy", description: "Independent contractors and freelance work." },
+    { title: "Digital Economy", description: "Business and jobs based on digital technologies." },
+    { title: "Green Economy", description: "Jobs in renewable energy and sustainable practices." },
+    { title: "Experience Economy", description: "Industries centered on customer experiences." },
+    { title: "Creative Economy", description: "Art, design, and creative professions." },
+    { title: "Trade Economy", description: "Focus on the exchange of goods and services." },
+    { title: "Knowledge Economy", description: "Industries based on intellectual capital." },
+  ];
+
   return (
     <>
       {/* Metadata for Title and Favicon */}
@@ -31,22 +48,13 @@ export default function Home() {
               <li className="relative group">
                 <button className="text-gray-900">Industries</button>
                 <ul className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white shadow-lg rounded-lg z-10 hidden group-hover:block">
-                  {[
-                    "Care Economy",
-                    "Gig Economy",
-                    "Digital Economy",
-                    "Green Economy",
-                    "Experience Economy",
-                    "Creative Economy",
-                    "Trade Economy",
-                    "Knowledge Economy",
-                  ].map((industry) => (
-                    <li key={industry}>
+                  {industries.map((industry) => (
+                    <li key={industry.title}>
                       <a
-                        href={`#${industry.toLowerCase().replace(/\s+/g, "-")}`}
+                        href={`#${industry.title.toLowerCase().replace(/\s+/g, "-")}`}
                         className="block px-4 py-2"
                       >
-                        {industry}
+                        {industry.title}
                       </a>
                     </li>
                   ))}
@@ -74,7 +82,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Focus Areas */}
+        {/* Focus Areas Section */}
         <section className="container mx-auto py-20" id="focus-areas">
           <div className="text-center">
             <h2 className="text-3xl font-semibold">Our Focus Areas</h2>
@@ -82,43 +90,35 @@ export default function Home() {
               Key workforce trends and initiatives shaping the future.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              "WorkForce Participants",
-              "Workforce Enablers",
-              "Service Providers",
-            ].map((pillar) => (
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {focusAreas.map((pillar) => (
               <div
-                key={pillar}
+                key={pillar.title}
                 className="bg-white p-6 rounded-lg shadow-lg text-center border border-gray-200"
               >
-                <h3 className="text-xl font-semibold">{pillar}</h3>
-                <p className="mt-2 text-gray-600">
-                  Short description about this area.
-                </p>
+                <h3 className="text-xl font-semibold">{pillar.title}</h3>
+                <p className="mt-2 text-gray-600">{pillar.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Featured Insights */}
-        <section className="bg-gray-50 py-20" id="featured-insights">
+        {/* Industries Section */}
+        <section className="bg-gray-50 py-20" id="industries">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold">Featured Insights</h2>
+            <h2 className="text-3xl font-semibold">The 8 Economies Shaping the Future of Work</h2>
             <p className="mt-4 text-lg">
-              Explore the latest reports and research.
+              Explore the various economies transforming the workforce landscape.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["Report 1", "Blog 2", "Research 3"].map((item) => (
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {industries.map((industry) => (
               <div
-                key={item}
+                key={industry.title}
                 className="bg-white p-6 rounded-lg shadow-lg text-center border border-gray-200"
               >
-                <h3 className="text-xl font-semibold">{item}</h3>
-                <p className="mt-2 text-gray-600">
-                  Short description of the insight.
-                </p>
+                <h3 className="text-xl font-semibold">{industry.title}</h3>
+                <p className="mt-2 text-gray-600">{industry.description}</p>
               </div>
             ))}
           </div>
@@ -140,10 +140,10 @@ export default function Home() {
           </a>
         </section>
 
-        {/* Footer */}
+        {/* Footer Section */}
         <footer className="bg-gray-900 text-white text-center py-6">
           <div className="container mx-auto">
-            {/* Initiative Section */}
+            {/* Initiative and Partner Section */}
             <div className="bg-white p-4 rounded-lg text-gray-900 flex flex-col md:flex-row justify-center items-center gap-6">
               <div className="text-center">
                 <p className="font-semibold">An initiative of</p>
@@ -158,7 +158,7 @@ export default function Home() {
                 <img
                   src="https://res.cloudinary.com/dwa3soopc/image/upload/v1741593599/ADHRAC-LOGO-PNG_ha4i34.png"
                   alt="ADHRAC Logo"
-                  className="h-12 mx-auto"
+                  className="h-19 mx-auto"
                 />
               </div>
             </div>
