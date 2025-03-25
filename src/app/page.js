@@ -29,6 +29,7 @@ export default function Home() {
         <link
           rel="icon"
           href="https://res.cloudinary.com/dwa3soopc/image/upload/v1741593349/WhatsApp_Image_2025-02-03_at_18.40.33_1_hq6arb.jpg"
+          sizes="64x64"
         />
       </Head>
 
@@ -36,13 +37,14 @@ export default function Home() {
         {/* Navigation Bar */}
         <header className="sticky top-0 bg-white shadow-md z-10">
           <nav className="container mx-auto flex justify-between items-center py-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex  justify -center  items-center space-x-40">
               <img
                 src="https://res.cloudinary.com/dwa3soopc/image/upload/v1741593349/WhatsApp_Image_2025-02-03_at_18.40.33_1_hq6arb.jpg"
                 alt="Logo"
-                className="w-16 h-16 rounded-full"
+                className="w-50 h-50 rounded-full"
               />
-              <div className="font-bold text-xl">Future of Work Consortium</div>
+              <div className="flex justify-center items-center"></div>
+              <div className="font-bold text-xl">Managing The Future of Work </div>
             </div>
             <ul className="flex space-x-6">
               <li className="relative group">
@@ -65,22 +67,27 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-blue-600 text-white text-center py-16">
-          <div className="container mx-auto">
-            <h1 className="text-4xl font-extrabold">
-              Shaping the Future of Work
-            </h1>
-            <p className="mt-4 text-lg">
-              Empowering economies, enhancing careers, and fostering innovation.
-            </p>
-            <a
-              href="#cta"
-              className="mt-6 inline-block bg-green-500 text-white py-3 px-8 rounded-full text-lg"
-            >
-              Join the Consortium
-            </a>
-          </div>
-        </section>
+<section
+  className="bg-blue-600 text-white text-center py-16 bg-cover bg-center relative"
+  style={{
+    backgroundImage:
+      "url('https://res.cloudinary.com/dwa3soopc/image/upload/v1742914188/consortium_image_ry9ixr.png')",
+  }}
+>
+  <div className="container mx-auto bg-black bg-opacity-40 p-6 rounded-lg max-w-4xl mx-auto">
+    <h1 className="text-3xl md:text-4xl font-extrabold">Modern Workforce Development Program</h1>
+    <p className="mt-3 text-lg">
+      Empowering economies, enhancing careers, and fostering innovation.
+    </p>
+    <a
+      href="#cta"
+      className="mt-5 inline-block bg-green-500 text-white py-3 px-8 rounded-full text-lg"
+    >
+      Join the Consortium
+    </a>
+  </div>
+</section>
+
 
         {/* Focus Areas Section */}
         <section className="container mx-auto py-20" id="focus-areas">
@@ -144,17 +151,25 @@ export default function Home() {
         <footer className="bg-gray-900 text-white text-center py-6">
           <div className="container mx-auto">
             {/* Initiative and Partner Section */}
-            <div className="bg-white p-4 rounded-lg text-gray-900 flex flex-col md:flex-row justify-center items-center gap-6">
+            <div className="bg-white p-4 rounded-lg text-gray-900 flex flex-col md:flex-row justify-between items-right gap-20">
               <div className="text-center">
                 <p className="font-semibold">An initiative of</p>
                 <img
                   src="https://res.cloudinary.com/dwa3soopc/image/upload/v1741594460/8_zziqf2.png"
                   alt="Qraft Logo"
-                  className="h-20 mx-auto"
+                  className="h-22 mx-auto"
+                />
+                </div>
+              <div className="text-center">
+                <p className="font-semibold">In partnership with</p>
+                <img
+                  src="https://res.cloudinary.com/dwa3soopc/image/upload/v1742913785/WhatsApp_Image_2024-10-24_at_11.39.24_sbxjyt.jpg"
+                  alt="Teach Nations Logo"
+                  className="h-22 mx-auto"
                 />
               </div>
               <div className="text-center">
-                <p className="font-semibold">In partnership with</p>
+              
                 <img
                   src="https://res.cloudinary.com/dwa3soopc/image/upload/v1741593599/ADHRAC-LOGO-PNG_ha4i34.png"
                   alt="ADHRAC Logo"
